@@ -1,10 +1,10 @@
 import style from "./App.module.scss";
 import {Routes, Route, Link} from 'react-router-dom';
-import { MainPageLazy } from "./pages/mainPages/MainPage.Lazy";
-import { AboutPageLazy } from "./pages/aboutPage/AboutPage.Lazy";
 import { Suspense } from "react";
-import { useTheme } from "./context/theme/UseTheme";
-import { className } from "./helpers/className";
+import { useTheme } from "./providers/ThemeProvider";
+import { className } from "shared/lib/className";
+import { AboutPage } from "pages/aboutPage";
+import { MainPage } from "pages/mainPages";
 
 
 export default function App () {
@@ -16,11 +16,10 @@ export default function App () {
 			<Link to="/">Main</Link>
 			<Suspense fallback={<div>Loading</div>}>
 				<Routes>
-						<Route path={"/about"} element={<AboutPageLazy/>}/>
-						<Route path={"/"} element={<MainPageLazy/>}/>
+						<Route path={"/about"} element={<AboutPage/>}/>
+						<Route path={"/"} element={<MainPage/>}/>
 				</Routes>
 			</Suspense>
-
 		</div>
 	);
 }
