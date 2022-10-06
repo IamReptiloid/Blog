@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { className } from 'shared/lib/className';
 import style from './AppLink.module.scss';
@@ -9,11 +10,10 @@ export enum AppLinkTheme {
 
 export interface AppLinkProps extends LinkProps{
     styles?: string[],
-    children?: JSX.Element | string
     theme?: AppLinkTheme
 }
 
-export function AppLink (props: AppLinkProps) {
+export const AppLink: FC<AppLinkProps> = (props) => {
     const {
         to, 
         children, 

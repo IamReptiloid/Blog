@@ -7,12 +7,11 @@ import { Navbar } from "widgets/navbar";
 
 
 export default function App () {
-	const {theme, changeTheme} = useTheme();
+	const {theme} = useTheme();
 	return (
 		<div className={className('app', {}, [theme])}>
 			<Navbar/>
 			<AppRouter/>
-			<button onClick={changeTheme}>changeTheme</button>
 		</div>
 	);
 }
