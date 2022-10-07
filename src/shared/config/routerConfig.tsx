@@ -1,4 +1,4 @@
-import AboutPage from "pages/aboutPage/ui/AboutPage";
+import { AboutPage } from "pages/aboutPage";
 import { MainPage } from "pages/mainPages";
 import { RouteProps } from "react-router-dom";
 
