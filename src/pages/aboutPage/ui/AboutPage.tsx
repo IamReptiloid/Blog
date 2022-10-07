@@ -1,13 +1,14 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export interface IAboutPageProps {
 }
 
 export default function AboutPage (props: IAboutPageProps) {
-    console.log(1111)
+    const { t } = useTranslation('about');
     return (
         <div>
-            AboutPage
+            {t('текст')}
         </div>
     );
 }
