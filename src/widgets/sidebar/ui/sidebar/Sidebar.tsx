@@ -8,11 +8,11 @@ export interface SidebarProps {
     styles?: string[]
 }
 
-export const Sidebar: FC<SidebarProps> = ({styles}) => {
+export const Sidebar: FC<SidebarProps> = ({ styles }) => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <div className={className(style.Sidebar, {[style.collapsed]: collapsed}, [...styles || []])}>
+        <div className={className(style.Sidebar, { [style.collapsed]: collapsed }, [...styles || []])}>
             <button onClick={() => setCollapsed(prev => !prev)}>Toggle</button>
             <div className={style.switcher}>
                 <ThemeSwitcher/>
@@ -20,4 +20,4 @@ export const Sidebar: FC<SidebarProps> = ({styles}) => {
             </div>
         </div>
     );
-}
+};

@@ -6,6 +6,6 @@ export function className(mainClass: string, options: Mode = {}, arrayClass: str
         ...arrayClass.filter(Boolean),
         ...Object.entries(options)
             .filter(option => !!option[1])
-            .map(option => option[0])
-    ].join(' ')
+            .map(option => option[0]),
+    ].join(' ');
 }

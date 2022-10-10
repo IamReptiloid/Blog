@@ -5,10 +5,10 @@ import style from './AppLink.module.scss';
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
 }
 
-export interface AppLinkProps extends LinkProps{
+export interface AppLinkProps extends LinkProps {
     styles?: string[],
     theme?: AppLinkTheme
 }
@@ -19,7 +19,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
         children, 
         styles = [], 
         theme = AppLinkTheme.PRIMARY 
-        ,...otherProps
+        , ...otherProps
     } = props;
 
     return (
@@ -31,4 +31,4 @@ export const AppLink: FC<AppLinkProps> = (props) => {
             {children}
         </Link>
     );
-} 
+}; 

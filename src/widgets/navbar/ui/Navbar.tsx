@@ -20,4 +20,4 @@ export const Navbar: FC<INavbarProps> = (props) => {
             </div>
         </div>
     );
-}
+};

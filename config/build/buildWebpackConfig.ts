@@ -1,9 +1,9 @@
-import  webpack  from "webpack";
-import { buildDevServer } from "./buildDevServer";
-import { buildLoaders } from "./buildLoaders";
-import { buildPlugins } from "./buildPlugins";
-import { buildResolvers } from "./buildResolvers";
-import { BuildOptions } from "./types/buildTypes";
+import  webpack  from 'webpack';
+import { buildDevServer } from './buildDevServer';
+import { buildLoaders } from './buildLoaders';
+import { buildPlugins } from './buildPlugins';
+import { buildResolvers } from './buildResolvers';
+import { BuildOptions } from './types/buildTypes';
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
@@ -13,14 +13,14 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         output: {
             path: options.path.build,
             filename: '[name].[contenthash].js',
-            clean: true
+            clean: true,
         },
         module: {
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
         plugins: buildPlugins(options),
-        devServer: options.isDev? buildDevServer(options) : undefined,
-        devtool: options.isDev? "inline-source-map" : undefined,
-    }
+        devServer: options.isDev ? buildDevServer(options) : undefined,
+        devtool: options.isDev ? 'inline-source-map' : undefined,
+    };
 }

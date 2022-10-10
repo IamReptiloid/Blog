@@ -8,16 +8,16 @@ export interface LangSwitcherProps {
     styles?: string[]
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({styles}) => {
+export const LangSwitcher: FC<LangSwitcherProps> = ({ styles }) => {
     const { t, i18n } = useTranslation();
     
     const changeLang = () => {
-        i18n.changeLanguage(i18n.language === 'ru'? 'en' : 'ru');
-    }
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
     return (
         <Button onClick={changeLang} className={className(style.LangSwitcher, {}, [...styles || []])}>
             {t('язык')}
         </Button>
     );
-}
+};
