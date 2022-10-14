@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -21,8 +22,11 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/indent": ["error", 4],
+    "@typescript-eslint/indent": ["error", "tab"],
     "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/comma-dangle": "off"
   }
 }
